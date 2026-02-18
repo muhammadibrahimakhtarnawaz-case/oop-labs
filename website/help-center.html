@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Center — OOP Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .search-bar {
+      display: flex;
+      gap: 0;
+      max-width: 560px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .search-bar input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 14px 18px;
+      font-family: var(--font-sans);
+      font-size: .95rem;
+      color: var(--color-text);
+    }
+    .search-bar button {
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      padding: 0 22px;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: .9rem;
+      cursor: pointer;
+    }
+    .search-bar button:hover { background: var(--color-primary-dark); }
+  </style>
+</head>
+<body>
+
+  <section class="page-hero">
+    <div class="page-hero__tag">Help Center</div>
+    <h1>How can we<br><span>help you?</span></h1>
+    <p>Search our knowledge base or browse categories below.</p>
+    <div class="search-bar" style="margin-top:28px;">
+      <input type="text" placeholder="Search articles, guides, and tutorials...">
+      <button>Search</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__header">
+      <h2>Browse by category</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card__icon">&#x1F680;</div>
+        <h3>Getting Started</h3>
+        <p>Set up your account, create your first project, and invite your team.</p>
+        <div style="margin-top:14px;font-size:.85rem;color:var(--color-text-light);">12 articles</div>
+      </div>
+      <div class="card">
+        <div class="card__icon">&#x1F4CA;</div>
+        <h3>Analytics</h3>
+        <p>Understand your dashboards, custom charts, and data export options.</p>
+        <div style="margin-top:14px;font-size:.85rem;color:var(--color-text-light);">18 articles</div>
+      </div>
+      <div class="card">
+        <div class="card__icon">&#x1F517;</div>
+        <h3>Integrations</h3>
+        <p>Step-by-step guides to connect GitHub, Slack, Jira, and more.</p>
+        <div style="margin-top:14px;font-size:.85rem;color:var(--color-text-light);">31 articles</div>
+      </div>
+      <div class="card">
+        <div class="card__icon">&#x1F512;</div>
+        <h3>Security &amp; Access</h3>
+        <p>SSO setup, permission management, and audit log configuration.</p>
+        <div style="margin-top:14px;font-size:.85rem;color:var(--color-text-light);">9 articles</div>
+      </div>
+      <div class="card">
+        <div class="card__icon">&#x1F4B3;</div>
+        <h3>Billing</h3>
+        <p>Manage subscriptions, invoices, payment methods, and upgrades.</p>
+        <div style="margin-top:14px;font-size:.85rem;color:var(--color-text-light);">7 articles</div>
+      </div>
+      <div class="card">
+        <div class="card__icon">&#x1F527;</div>
+        <h3>API &amp; Webhooks</h3>
+        <p>Authentication, rate limits, webhook setup, and debugging.</p>
+        <div style="margin-top:14px;font-size:.85rem;color:var(--color-text-light);">22 articles</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div style="max-width:680px;margin:0 auto;">
+      <div class="section__header">
+        <h2>Popular articles</h2>
+      </div>
+      <div class="post-list" style="margin:0;">
+        <div class="post-item" style="padding:16px 0;">
+          <div class="post-item__content">
+            <h3 style="font-size:1rem;">How to connect your GitHub repository</h3>
+            <p>A step-by-step guide to linking your GitHub account and importing your first repo.</p>
+          </div>
+        </div>
+        <div class="post-item" style="padding:16px 0;">
+          <div class="post-item__content">
+            <h3 style="font-size:1rem;">Setting up SAML SSO with Okta</h3>
+            <p>Configure SAML-based single sign-on for your Enterprise organisation.</p>
+          </div>
+        </div>
+        <div class="post-item" style="padding:16px 0;">
+          <div class="post-item__content">
+            <h3 style="font-size:1rem;">Understanding your analytics dashboard</h3>
+            <p>An overview of every panel and metric on your main analytics view.</p>
+          </div>
+        </div>
+        <div class="post-item" style="padding:16px 0;">
+          <div class="post-item__content">
+            <h3 style="font-size:1rem;">How to create and manage API keys</h3>
+            <p>Generate, rotate, and revoke API keys for your integrations and automation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="text-align:center;">
+    <h2 style="font-size:1.75rem;font-weight:800;letter-spacing:-.5px;margin-bottom:12px;">Can't find what you need?</h2>
+    <p style="color:var(--color-text-muted);max-width:400px;margin:0 auto 24px;">Our support team is standing by to help.</p>
+    <a href="contact.html" class="btn btn-primary">Contact support</a>
+  </section>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
