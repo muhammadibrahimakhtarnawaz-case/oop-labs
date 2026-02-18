@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — OOP Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <section class="page-hero" style="padding:60px 24px;">
+    <div class="page-hero__tag">Documentation</div>
+    <h1>OOP Labs<br><span>Documentation</span></h1>
+    <p>Everything you need to integrate, build on, and extend OOP Labs.</p>
+    <div class="page-hero__actions">
+      <a href="api-reference.html" class="btn btn-primary btn-lg">API Reference</a>
+      <a href="help-center.html" class="btn btn-outline btn-lg">Help Center</a>
+    </div>
+  </section>
+
+  <div class="docs-layout">
+    <!-- Sidebar -->
+    <nav class="docs-sidebar">
+      <div class="docs-sidebar__section">
+        <div class="docs-sidebar__section-title">Getting Started</div>
+        <a href="#introduction" class="active">Introduction</a>
+        <a href="#quickstart">Quickstart</a>
+        <a href="#authentication">Authentication</a>
+      </div>
+      <div class="docs-sidebar__section">
+        <div class="docs-sidebar__section-title">Core Concepts</div>
+        <a href="#projects">Projects</a>
+        <a href="#environments">Environments</a>
+        <a href="#deployments">Deployments</a>
+      </div>
+      <div class="docs-sidebar__section">
+        <div class="docs-sidebar__section-title">Integrations</div>
+        <a href="#github">GitHub</a>
+        <a href="#webhooks">Webhooks</a>
+        <a href="#slack">Slack</a>
+      </div>
+      <div class="docs-sidebar__section">
+        <div class="docs-sidebar__section-title">Reference</div>
+        <a href="api-reference.html">API Reference</a>
+        <a href="changelog.html">Changelog</a>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="docs-content">
+      <h2 id="introduction">Introduction</h2>
+      <p>Welcome to the OOP Labs documentation. This guide will help you understand how OOP Labs works and how to integrate it into your workflow.</p>
+      <p>OOP Labs exposes a REST API with predictable URLs, standard HTTP response codes, and JSON-encoded responses. You can use our official SDKs or make raw HTTP requests.</p>
+
+      <h2 id="quickstart">Quickstart</h2>
+      <p>Install the OOP Labs CLI to get started in under two minutes:</p>
+      <div class="code-block"><span class="comment"># Install via npm</span>
+npm install -g @ooplabs/cli
+
+<span class="comment"># Authenticate</span>
+ooplabs login
+
+<span class="comment"># Create your first project</span>
+ooplabs init my-project</div>
+
+      <p>Or use the package SDK directly in your application:</p>
+      <div class="code-block"><span class="comment"># Install the Node.js SDK</span>
+npm install @ooplabs/sdk
+
+<span class="comment"># Python</span>
+pip install ooplabs</div>
+
+      <h2 id="authentication">Authentication</h2>
+      <p>The OOP Labs API uses API keys for authentication. Include your key in the <code>Authorization</code> header:</p>
+      <div class="code-block"><span class="keyword">Authorization</span>: Bearer YOUR_API_KEY</div>
+      <p>You can generate API keys from the <strong>Settings &rarr; API Keys</strong> section of your dashboard. Keep your keys secret — treat them like passwords.</p>
+
+      <h3>Token scopes</h3>
+      <p>API keys support granular scopes:</p>
+      <ul>
+        <li><code>read:projects</code> — list and read project data</li>
+        <li><code>write:projects</code> — create and update projects</li>
+        <li><code>admin</code> — full access including billing and members</li>
+      </ul>
+
+      <h2 id="projects">Projects</h2>
+      <p>A <strong>Project</strong> is the top-level organisational unit in OOP Labs. All resources (environments, deployments, integrations) belong to a project.</p>
+      <div class="code-block"><span class="comment">// Fetch all projects (Node.js SDK)</span>
+<span class="keyword">import</span> { OopLabs } <span class="keyword">from</span> <span class="string">'@ooplabs/sdk'</span>;
+
+<span class="keyword">const</span> client = <span class="keyword">new</span> <span class="method">OopLabs</span>({ apiKey: process.env.OOPLABS_KEY });
+<span class="keyword">const</span> projects = <span class="keyword">await</span> client.projects.<span class="method">list</span>();
+console.<span class="method">log</span>(projects);</div>
+
+      <h2 id="environments">Environments</h2>
+      <p>Each project can have multiple <strong>Environments</strong> (e.g., <code>production</code>, <code>staging</code>, <code>development</code>). Environments have independent configuration, secrets, and deployment targets.</p>
+
+      <h2 id="deployments">Deployments</h2>
+      <p>A <strong>Deployment</strong> represents a versioned snapshot of your application deployed to an environment. Deployments are immutable once created.</p>
+
+      <h2 id="github">GitHub Integration</h2>
+      <p>Connect your GitHub repository to enable automatic deployments on every push:</p>
+      <ol style="margin:0 0 16px 20px;color:var(--color-text-muted);font-size:.9375rem;">
+        <li style="margin-bottom:8px;">Go to <strong>Settings &rarr; Integrations &rarr; GitHub</strong></li>
+        <li style="margin-bottom:8px;">Click <strong>Connect GitHub</strong> and authorise the OOP Labs app</li>
+        <li style="margin-bottom:8px;">Select the repositories you want to link</li>
+        <li>Configure branch &rarr; environment mappings</li>
+      </ol>
+
+      <h2 id="webhooks">Webhooks</h2>
+      <p>OOP Labs can send HTTP POST payloads to a URL of your choice whenever specific events occur.</p>
+      <div class="code-block"><span class="comment">// Example deployment.succeeded webhook payload</span>
+{
+  <span class="string">"event"</span>: <span class="string">"deployment.succeeded"</span>,
+  <span class="string">"timestamp"</span>: <span class="string">"2024-02-01T10:30:00Z"</span>,
+  <span class="string">"data"</span>: {
+    <span class="string">"deployment_id"</span>: <span class="string">"dep_abc123"</span>,
+    <span class="string">"environment"</span>: <span class="string">"production"</span>,
+    <span class="string">"version"</span>: <span class="string">"v1.4.2"</span>
+  }
+}</div>
+    </div>
+  </div>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

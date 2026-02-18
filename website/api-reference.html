@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Reference — OOP Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .endpoint {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .endpoint__header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .method {
+      font-family: 'Fira Code', monospace;
+      font-size: .75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      min-width: 56px;
+      text-align: center;
+    }
+    .method--get  { background: #dcfce7; color: #166534; }
+    .method--post { background: #dbeafe; color: #1d4ed8; }
+    .method--put  { background: #fef9c3; color: #854d0e; }
+    .method--delete { background: #fee2e2; color: #991b1b; }
+    .endpoint__path {
+      font-family: 'Fira Code', monospace;
+      font-size: .875rem;
+      color: var(--color-text);
+      font-weight: 500;
+    }
+    .endpoint__desc {
+      font-size: .875rem;
+      color: var(--color-text-muted);
+      margin-left: auto;
+    }
+    .endpoint__body {
+      padding: 16px 20px;
+      background: var(--color-bg-alt);
+    }
+    .endpoint__body p {
+      font-size: .875rem;
+      color: var(--color-text-muted);
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="page-hero" style="padding:60px 24px;">
+    <div class="page-hero__tag">API Reference</div>
+    <h1>REST API<br><span>Reference</span></h1>
+    <p>Full reference for every endpoint in the OOP Labs API. Base URL: <code style="background:#eef2ff;padding:2px 8px;border-radius:4px;font-size:.9rem;">https://api.ooplabs.io/v1</code></p>
+    <div class="page-hero__actions">
+      <a href="documentation.html" class="btn btn-primary btn-lg">Getting Started</a>
+      <a href="#" class="btn btn-outline btn-lg">Download OpenAPI spec</a>
+    </div>
+  </section>
+
+  <div class="docs-layout">
+    <!-- Sidebar -->
+    <nav class="docs-sidebar">
+      <div class="docs-sidebar__section">
+        <div class="docs-sidebar__section-title">Overview</div>
+        <a href="#overview" class="active">Introduction</a>
+        <a href="#auth">Authentication</a>
+        <a href="#errors">Errors</a>
+        <a href="#rate-limits">Rate limits</a>
+      </div>
+      <div class="docs-sidebar__section">
+        <div class="docs-sidebar__section-title">Endpoints</div>
+        <a href="#projects-ep">Projects</a>
+        <a href="#environments-ep">Environments</a>
+        <a href="#deployments-ep">Deployments</a>
+        <a href="#webhooks-ep">Webhooks</a>
+        <a href="#members-ep">Members</a>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="docs-content">
+      <h2 id="overview">Introduction</h2>
+      <p>The OOP Labs API is organised around REST. All requests must be made over HTTPS. The API returns JSON-encoded responses and uses standard HTTP response codes.</p>
+
+      <h2 id="auth">Authentication</h2>
+      <p>Authenticate using an API key in the <code>Authorization</code> header:</p>
+      <div class="code-block">curl https://api.ooplabs.io/v1/projects \
+  -H <span class="string">"Authorization: Bearer YOUR_API_KEY"</span></div>
+
+      <h2 id="errors">Errors</h2>
+      <p>OOP Labs uses conventional HTTP response codes. Codes in the <code>2xx</code> range indicate success. Codes in the <code>4xx</code> range indicate a client error. Codes in the <code>5xx</code> range indicate a server error.</p>
+
+      <h2 id="rate-limits">Rate limits</h2>
+      <p>The API is rate-limited to <strong>1,000 requests per minute</strong> per API key. Exceeding this limit returns a <code>429 Too Many Requests</code> response. The <code>Retry-After</code> header tells you when to retry.</p>
+
+      <h2 id="projects-ep">Projects</h2>
+
+      <div class="endpoint">
+        <div class="endpoint__header">
+          <span class="method method--get">GET</span>
+          <code class="endpoint__path">/projects</code>
+          <span class="endpoint__desc">List all projects</span>
+        </div>
+        <div class="endpoint__body">
+          <p>Returns a paginated list of all projects in the authenticated account.</p>
+          <div class="code-block"><span class="comment">// Response</span>
+{
+  <span class="string">"data"</span>: [
+    { <span class="string">"id"</span>: <span class="string">"proj_abc"</span>, <span class="string">"name"</span>: <span class="string">"My Project"</span>, <span class="string">"created_at"</span>: <span class="string">"2024-01-01"</span> }
+  ],
+  <span class="string">"meta"</span>: { <span class="string">"page"</span>: 1, <span class="string">"total"</span>: 1 }
+}</div>
+        </div>
+      </div>
+
+      <div class="endpoint">
+        <div class="endpoint__header">
+          <span class="method method--post">POST</span>
+          <code class="endpoint__path">/projects</code>
+          <span class="endpoint__desc">Create a project</span>
+        </div>
+        <div class="endpoint__body">
+          <p>Creates a new project. Required fields: <code>name</code>.</p>
+          <div class="code-block"><span class="comment">// Request body</span>
+{ <span class="string">"name"</span>: <span class="string">"My New Project"</span>, <span class="string">"description"</span>: <span class="string">"Optional description"</span> }</div>
+        </div>
+      </div>
+
+      <div class="endpoint">
+        <div class="endpoint__header">
+          <span class="method method--get">GET</span>
+          <code class="endpoint__path">/projects/:id</code>
+          <span class="endpoint__desc">Get a project</span>
+        </div>
+        <div class="endpoint__body">
+          <p>Returns a single project by its ID.</p>
+        </div>
+      </div>
+
+      <div class="endpoint">
+        <div class="endpoint__header">
+          <span class="method method--put">PUT</span>
+          <code class="endpoint__path">/projects/:id</code>
+          <span class="endpoint__desc">Update a project</span>
+        </div>
+        <div class="endpoint__body">
+          <p>Updates an existing project. All body fields are optional.</p>
+        </div>
+      </div>
+
+      <div class="endpoint">
+        <div class="endpoint__header">
+          <span class="method method--delete">DELETE</span>
+          <code class="endpoint__path">/projects/:id</code>
+          <span class="endpoint__desc">Delete a project</span>
+        </div>
+        <div class="endpoint__body">
+          <p>Permanently deletes a project and all associated resources. This action is irreversible.</p>
+        </div>
+      </div>
+
+      <h2 id="deployments-ep">Deployments</h2>
+
+      <div class="endpoint">
+        <div class="endpoint__header">
+          <span class="method method--get">GET</span>
+          <code class="endpoint__path">/projects/:id/deployments</code>
+          <span class="endpoint__desc">List deployments</span>
+        </div>
+        <div class="endpoint__body">
+          <p>Returns all deployments for a project, sorted by creation date descending.</p>
+        </div>
+      </div>
+
+      <div class="endpoint">
+        <div class="endpoint__header">
+          <span class="method method--post">POST</span>
+          <code class="endpoint__path">/projects/:id/deployments</code>
+          <span class="endpoint__desc">Create a deployment</span>
+        </div>
+        <div class="endpoint__body">
+          <p>Triggers a new deployment. Required: <code>environment</code>, <code>ref</code> (git branch, tag, or SHA).</p>
+          <div class="code-block">{ <span class="string">"environment"</span>: <span class="string">"production"</span>, <span class="string">"ref"</span>: <span class="string">"main"</span> }</div>
+        </div>
+      </div>
+
+      <h2 id="webhooks-ep">Webhooks</h2>
+
+      <div class="endpoint">
+        <div class="endpoint__header">
+          <span class="method method--post">POST</span>
+          <code class="endpoint__path">/projects/:id/webhooks</code>
+          <span class="endpoint__desc">Register a webhook</span>
+        </div>
+        <div class="endpoint__body">
+          <p>Registers a webhook URL for one or more events.</p>
+          <div class="code-block">{
+  <span class="string">"url"</span>: <span class="string">"https://your-app.com/hooks/ooplabs"</span>,
+  <span class="string">"events"</span>: [<span class="string">"deployment.succeeded"</span>, <span class="string">"deployment.failed"</span>]
+}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

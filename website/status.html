@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Status Page — OOP Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .overall-status {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 32px;
+      background: #dcfce7;
+      border: 1.5px solid #86efac;
+      border-radius: var(--radius-lg);
+      max-width: 680px;
+      margin: 0 auto 48px;
+    }
+    .overall-status__icon { font-size: 2rem; }
+    .overall-status h2 { font-size: 1.25rem; font-weight: 800; color: #166534; }
+    .overall-status p { font-size: .875rem; color: #15803d; }
+  </style>
+</head>
+<body>
+
+  <section class="page-hero">
+    <div class="page-hero__tag">Status Page</div>
+    <h1>System<br><span>Status</span></h1>
+    <p>Real-time health overview for all OOP Labs services. Updated every 60 seconds.</p>
+  </section>
+
+  <section class="section">
+
+    <div class="overall-status">
+      <div class="overall-status__icon">&#x2705;</div>
+      <div>
+        <h2>All systems operational</h2>
+        <p>Last updated: February 18, 2024 at 20:00 UTC</p>
+      </div>
+    </div>
+
+    <div style="max-width:780px;margin:0 auto;">
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:12px;">Current status by service</h3>
+      <table class="status-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Status</th>
+            <th>Uptime (30 days)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>API (api.ooplabs.io)</td>
+            <td><span class="status-badge status-badge--operational"><span class="dot"></span> Operational</span></td>
+            <td>99.99%</td>
+          </tr>
+          <tr>
+            <td>Web App (app.ooplabs.io)</td>
+            <td><span class="status-badge status-badge--operational"><span class="dot"></span> Operational</span></td>
+            <td>99.97%</td>
+          </tr>
+          <tr>
+            <td>CDN / Static Assets</td>
+            <td><span class="status-badge status-badge--operational"><span class="dot"></span> Operational</span></td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>Authentication Service</td>
+            <td><span class="status-badge status-badge--operational"><span class="dot"></span> Operational</span></td>
+            <td>99.99%</td>
+          </tr>
+          <tr>
+            <td>Webhook Delivery</td>
+            <td><span class="status-badge status-badge--operational"><span class="dot"></span> Operational</span></td>
+            <td>99.92%</td>
+          </tr>
+          <tr>
+            <td>Analytics Pipeline</td>
+            <td><span class="status-badge status-badge--operational"><span class="dot"></span> Operational</span></td>
+            <td>99.95%</td>
+          </tr>
+          <tr>
+            <td>Email Notifications</td>
+            <td><span class="status-badge status-badge--operational"><span class="dot"></span> Operational</span></td>
+            <td>99.89%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+  <section class="section section--alt">
+    <div style="max-width:780px;margin:0 auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:24px;">Recent incidents</h2>
+
+      <div class="post-list" style="margin:0;">
+        <div class="post-item" style="padding:20px 0;">
+          <div class="post-item__date">Jan 14</div>
+          <div class="post-item__content">
+            <h3 style="font-size:1rem;">Degraded webhook delivery performance</h3>
+            <p>Between 14:20 – 15:05 UTC, a subset of webhook deliveries were delayed by up to 4 minutes due to a queue backlog. All deliveries completed successfully. Root cause: an inefficient database query introduced in v3.5.2, since resolved.</p>
+            <div class="post-item__tags" style="margin-top:8px;">
+              <span class="tag tag--yellow">Degraded</span>
+              <span class="tag">Resolved</span>
+            </div>
+          </div>
+        </div>
+        <div class="post-item" style="padding:20px 0;">
+          <div class="post-item__date">Dec 28</div>
+          <div class="post-item__content">
+            <h3 style="font-size:1rem;">Elevated API error rates (502)</h3>
+            <p>Between 09:12 – 09:38 UTC, approximately 2% of API requests returned 502 errors following an infrastructure upgrade. A quick rollback restored normal service.</p>
+            <div class="post-item__tags" style="margin-top:8px;">
+              <span class="tag tag--red">Partial outage</span>
+              <span class="tag">Resolved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="text-align:center;">
+    <h2 style="font-size:1.75rem;font-weight:800;letter-spacing:-.5px;margin-bottom:12px;">Subscribe to updates</h2>
+    <p style="color:var(--color-text-muted);max-width:420px;margin:0 auto 24px;">Get notified by email or Slack when we create, update, or resolve an incident.</p>
+    <a href="contact.html" class="btn btn-primary">Subscribe</a>
+  </section>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

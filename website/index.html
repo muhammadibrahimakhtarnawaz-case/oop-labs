@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP Labs — Build Better Software</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .home-hero {
+      background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 60%, #f0fdf4 100%);
+      padding: 100px 24px 80px;
+      text-align: center;
+    }
+    .home-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .home-hero h1 span { color: var(--color-primary); }
+    .home-hero p {
+      font-size: 1.2rem;
+      color: var(--color-text-muted);
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+    .home-hero__actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+    .home-hero__trust {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      color: var(--color-text-muted);
+      font-size: .875rem;
+    }
+    .home-hero__trust span { display: flex; align-items: center; gap: 6px; }
+    .nav-sections {
+      padding: 72px 24px;
+      background: var(--color-bg-alt);
+    }
+    .nav-sections__header { text-align: center; margin-bottom: 48px; }
+    .nav-sections__header h2 {
+      font-size: 2rem; font-weight: 800; letter-spacing: -.5px; margin-bottom: 10px;
+    }
+    .nav-sections__header p { color: var(--color-text-muted); }
+    .nav-sections__group { margin-bottom: 48px; max-width: var(--max-width); margin-left: auto; margin-right: auto; }
+    .nav-sections__group-title {
+      font-size: .75rem; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--color-text-muted); margin-bottom: 16px;
+    }
+    .nav-sections__links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .nav-link-card {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .nav-link-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+      color: var(--color-primary);
+    }
+    .nav-link-card__icon {
+      width: 44px; height: 44px; border-radius: var(--radius-sm);
+      background: #eef2ff; display: flex; align-items: center;
+      justify-content: center; font-size: 1.4rem; flex-shrink: 0;
+    }
+    .nav-link-card__text h4 { font-size: .95rem; font-weight: 700; margin-bottom: 2px; }
+    .nav-link-card__text p { font-size: .8rem; color: var(--color-text-muted); line-height: 1.4; }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="home-hero">
+    <div class="page-hero__tag">Welcome to OOP Labs</div>
+    <h1>Build better software<br><span>ship it faster</span></h1>
+    <p>Everything your team needs — from product planning to customer support — all in one place.</p>
+    <div class="home-hero__actions">
+      <a href="features.html" class="btn btn-primary btn-lg">Explore Features</a>
+      <a href="pricing.html" class="btn btn-outline btn-lg">View Pricing</a>
+    </div>
+    <div class="home-hero__trust">
+      <span>&#x2713; No credit card required</span>
+      <span>&#x2713; Free 14-day trial</span>
+      <span>&#x2713; Cancel anytime</span>
+    </div>
+  </section>
+
+  <!-- Page Directory -->
+  <section class="nav-sections">
+    <div class="nav-sections__header">
+      <h2>Explore All Pages</h2>
+      <p>Navigate to any section of the platform.</p>
+    </div>
+
+    <!-- Product section -->
+    <div class="nav-sections__group">
+      <div class="nav-sections__group-title">&#x1F4E6; Product</div>
+      <div class="nav-sections__links">
+        <a href="product.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x1F680;</div>
+          <div class="nav-link-card__text"><h4>Product</h4><p>Overview of what we build</p></div>
+        </a>
+        <a href="features.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x2728;</div>
+          <div class="nav-link-card__text"><h4>Features</h4><p>Detailed capability list</p></div>
+        </a>
+        <a href="pricing.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x1F4B0;</div>
+          <div class="nav-link-card__text"><h4>Pricing</h4><p>Plans for every team size</p></div>
+        </a>
+        <a href="integrations.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x1F517;</div>
+          <div class="nav-link-card__text"><h4>Integrations</h4><p>Connect your favourite tools</p></div>
+        </a>
+        <a href="changelog.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x1F4CB;</div>
+          <div class="nav-link-card__text"><h4>Changelog</h4><p>Latest updates and releases</p></div>
+        </a>
+        <a href="roadmap.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x1F5FA;&#xFE0F;</div>
+          <div class="nav-link-card__text"><h4>Roadmap</h4><p>Where we're headed next</p></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Company section -->
+    <div class="nav-sections__group">
+      <div class="nav-sections__group-title">&#x1F3E2; Company</div>
+      <div class="nav-sections__links">
+        <a href="about.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x1F3E2;</div>
+          <div class="nav-link-card__text"><h4>About Us</h4><p>Our story and mission</p></div>
+        </a>
+        <a href="blog.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x1F4DD;</div>
+          <div class="nav-link-card__text"><h4>Blog</h4><p>Articles and insights</p></div>
+        </a>
+        <a href="careers.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x1F4BC;</div>
+          <div class="nav-link-card__text"><h4>Careers</h4><p>Join our growing team</p></div>
+        </a>
+        <a href="press.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x1F4F0;</div>
+          <div class="nav-link-card__text"><h4>Press</h4><p>Media kit and news</p></div>
+        </a>
+        <a href="partners.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x1F91D;</div>
+          <div class="nav-link-card__text"><h4>Partners</h4><p>Grow together with us</p></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Support section -->
+    <div class="nav-sections__group">
+      <div class="nav-sections__group-title">&#x1F4AC; Support</div>
+      <div class="nav-sections__links">
+        <a href="support.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x1F198;</div>
+          <div class="nav-link-card__text"><h4>Support</h4><p>Get help from our team</p></div>
+        </a>
+        <a href="help-center.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x2753;</div>
+          <div class="nav-link-card__text"><h4>Help Center</h4><p>Answers to common questions</p></div>
+        </a>
+        <a href="documentation.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x1F4DA;</div>
+          <div class="nav-link-card__text"><h4>Documentation</h4><p>Technical guides and references</p></div>
+        </a>
+        <a href="api-reference.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x26A1;</div>
+          <div class="nav-link-card__text"><h4>API Reference</h4><p>Full API endpoint details</p></div>
+        </a>
+        <a href="status.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x1F4E1;</div>
+          <div class="nav-link-card__text"><h4>Status Page</h4><p>Live system health overview</p></div>
+        </a>
+        <a href="contact.html" class="nav-link-card">
+          <div class="nav-link-card__icon">&#x2709;&#xFE0F;</div>
+          <div class="nav-link-card__text"><h4>Contact Us</h4><p>Reach out anytime</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

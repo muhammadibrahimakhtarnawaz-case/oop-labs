@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features — OOP Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .feature-section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      padding: 64px 24px;
+    }
+    @media (max-width: 720px) {
+      .feature-section { grid-template-columns: 1fr; gap: 32px; }
+    }
+    .feature-section--reverse { direction: rtl; }
+    .feature-section--reverse > * { direction: ltr; }
+    .feature-visual {
+      background: linear-gradient(135deg, #eef2ff, #f0fdf4);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+    }
+    .feature-text h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -.5px;
+      margin-bottom: 14px;
+    }
+    .feature-text p {
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      line-height: 1.75;
+    }
+    .feature-text ul {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .feature-text ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: .9rem;
+      margin-bottom: 10px;
+      color: var(--color-text-muted);
+    }
+    .feature-text ul li span.check { color: var(--color-success); font-size: 1rem; margin-top: 2px; }
+  </style>
+</head>
+<body>
+
+  <section class="page-hero">
+    <div class="page-hero__tag">Features</div>
+    <h1>Packed with features<br><span>loved by developers</span></h1>
+    <p>Explore the full set of capabilities that make OOP Labs the go-to platform for engineering teams.</p>
+    <div class="page-hero__actions">
+      <a href="pricing.html" class="btn btn-primary btn-lg">Get started free</a>
+      <a href="documentation.html" class="btn btn-outline btn-lg">Read the docs</a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Feature 1 -->
+  <div class="feature-section">
+    <div class="feature-visual">&#x1F6E0;&#xFE0F;</div>
+    <div class="feature-text">
+      <h2>Developer-first tooling</h2>
+      <p>Built by developers, for developers. Every feature is designed with your workflow in mind.</p>
+      <ul>
+        <li><span class="check">&#x2713;</span> SDKs for JavaScript, Python, Go, Ruby, Java &amp; more</li>
+        <li><span class="check">&#x2713;</span> Full-featured CLI with auto-complete</li>
+        <li><span class="check">&#x2713;</span> Native IDE extensions for VS Code and JetBrains</li>
+        <li><span class="check">&#x2713;</span> Git-native workflows and branch previews</li>
+      </ul>
+      <a href="documentation.html" class="btn btn-outline">View docs &rarr;</a>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- Feature 2 -->
+  <div class="feature-section feature-section--reverse">
+    <div class="feature-visual">&#x1F4CA;</div>
+    <div class="feature-text">
+      <h2>Real-time analytics</h2>
+      <p>Get a crystal-clear picture of your system health, usage trends, and team velocity.</p>
+      <ul>
+        <li><span class="check">&#x2713;</span> Custom dashboards with drag-and-drop widgets</li>
+        <li><span class="check">&#x2713;</span> Funnel and cohort analysis</li>
+        <li><span class="check">&#x2713;</span> Alerting and anomaly detection</li>
+        <li><span class="check">&#x2713;</span> Data export to CSV, JSON, or your data warehouse</li>
+      </ul>
+      <a href="product.html" class="btn btn-outline">Learn more &rarr;</a>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- Feature 3 -->
+  <div class="feature-section">
+    <div class="feature-visual">&#x1F512;</div>
+    <div class="feature-text">
+      <h2>Enterprise-grade security</h2>
+      <p>Your data is encrypted at rest and in transit. Compliance is never an afterthought.</p>
+      <ul>
+        <li><span class="check">&#x2713;</span> SOC 2 Type II certified</li>
+        <li><span class="check">&#x2713;</span> SAML SSO &amp; SCIM provisioning</li>
+        <li><span class="check">&#x2713;</span> Fine-grained Role-Based Access Control</li>
+        <li><span class="check">&#x2713;</span> Full audit logs with 12-month retention</li>
+      </ul>
+      <a href="pricing.html" class="btn btn-outline">See enterprise plan &rarr;</a>
+    </div>
+  </div>
+  <hr class="divider">
+
+  <!-- Feature 4 -->
+  <div class="feature-section feature-section--reverse">
+    <div class="feature-visual">&#x1F916;</div>
+    <div class="feature-text">
+      <h2>AI-powered workflows</h2>
+      <p>Let AI handle the repetitive work so your team can focus on what matters.</p>
+      <ul>
+        <li><span class="check">&#x2713;</span> Automated code review suggestions</li>
+        <li><span class="check">&#x2713;</span> Intelligent issue triage and labelling</li>
+        <li><span class="check">&#x2713;</span> Natural language query for analytics</li>
+        <li><span class="check">&#x2713;</span> Predictive sprint planning</li>
+      </ul>
+      <a href="product.html" class="btn btn-outline">Explore AI features &rarr;</a>
+    </div>
+  </div>
+
+  <section class="section section--alt" style="text-align:center;">
+    <h2 style="font-size:2rem;font-weight:800;letter-spacing:-.75px;margin-bottom:12px;">See all features in action</h2>
+    <p style="color:var(--color-text-muted);max-width:460px;margin:0 auto 28px;">Start a free trial — no credit card required.</p>
+    <a href="pricing.html" class="btn btn-primary btn-lg">Start free trial</a>
+  </section>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

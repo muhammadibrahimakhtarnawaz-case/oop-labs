@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — OOP Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .stat-item { text-align: center; }
+    .stat-item__number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: var(--color-primary);
+    }
+    .stat-item__label {
+      font-size: .85rem;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="page-hero">
+    <div class="page-hero__tag">About Us</div>
+    <h1>Building tools<br><span>developers love</span></h1>
+    <p>OOP Labs was founded in 2019 with a simple mission: make software development joyful, productive, and accessible to everyone.</p>
+    <div class="page-hero__actions">
+      <a href="careers.html" class="btn btn-primary btn-lg">Join our team</a>
+      <a href="press.html" class="btn btn-outline btn-lg">Press kit</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div style="max-width:720px;margin:0 auto;text-align:center;">
+      <h2 style="font-size:1.75rem;font-weight:800;letter-spacing:-.5px;margin-bottom:16px;">Our mission</h2>
+      <p style="font-size:1.1rem;color:var(--color-text-muted);line-height:1.8;">
+        We believe great software changes the world. Our mission is to remove every obstacle between a developer's idea and its impact — giving teams the tools, infrastructure, and insights to ship confidently at any scale.
+      </p>
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-item__number">50 K+</div>
+          <div class="stat-item__label">Teams worldwide</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__number">120+</div>
+          <div class="stat-item__label">Team members</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__number">18</div>
+          <div class="stat-item__label">Countries</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__number">$42 M</div>
+          <div class="stat-item__label">Series B raised</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="section__header">
+      <h2>Meet the team</h2>
+      <p>A diverse group of engineers, designers, and operators passionate about developer experience.</p>
+    </div>
+    <div class="people-grid">
+      <div class="person-card">
+        <div class="person-card__avatar">AM</div>
+        <h4>Ayesha Mirza</h4>
+        <span>Co-Founder &amp; CEO</span>
+      </div>
+      <div class="person-card">
+        <div class="person-card__avatar">JK</div>
+        <h4>James Kim</h4>
+        <span>Co-Founder &amp; CTO</span>
+      </div>
+      <div class="person-card">
+        <div class="person-card__avatar">LP</div>
+        <h4>Lucia Perez</h4>
+        <span>Head of Product</span>
+      </div>
+      <div class="person-card">
+        <div class="person-card__avatar">DW</div>
+        <h4>David Wu</h4>
+        <span>Head of Engineering</span>
+      </div>
+      <div class="person-card">
+        <div class="person-card__avatar">SR</div>
+        <h4>Sara Rashid</h4>
+        <span>Head of Design</span>
+      </div>
+      <div class="person-card">
+        <div class="person-card__avatar">TO</div>
+        <h4>Tunde Okafor</h4>
+        <span>Head of Growth</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section__header">
+      <h2>Our values</h2>
+      <p>These principles guide every decision we make.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card__icon">&#x1F4A1;</div>
+        <h3>Developer empathy</h3>
+        <p>We dog-food our own product every day. If it frustrates us, we fix it.</p>
+      </div>
+      <div class="card">
+        <div class="card__icon">&#x1F50D;</div>
+        <h3>Radical transparency</h3>
+        <p>Open roadmap, public status page, honest post-mortems. No surprises.</p>
+      </div>
+      <div class="card">
+        <div class="card__icon">&#x1F680;</div>
+        <h3>Ship, learn, iterate</h3>
+        <p>We believe in fast cycles and learning from real feedback.</p>
+      </div>
+      <div class="card">
+        <div class="card__icon">&#x1F30D;</div>
+        <h3>Remote-first</h3>
+        <p>Talent is global. Our culture is built to thrive asynchronously.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
